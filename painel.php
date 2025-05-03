@@ -8,14 +8,9 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $is_admin = $_SESSION['is_admin'] == 1;
-$users = [];
-
-if ($is_admin) {
-    $result = $conexao->query("SELECT id, nome, email, senha, is_admin, status FROM users");
-    $users = $result->fetch_all(MYSQLI_ASSOC);
-}
+$result = $conexao->query("SELECT id, nome, email, senha, is_admin, status FROM users");
+$users = $result->fetch_all(MYSQLI_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,58 +43,33 @@ if ($is_admin) {
     <main>
         <h1>Dados</h1>
         <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
-        <?php if ($is_admin): ?>
-            <h2>Lista de Usuários</h2>
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Senha (hash)</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-                <?php foreach ($users as $user): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($user['nome']); ?></td>
-                    <td><?php echo htmlspecialchars($user['email']); ?></td>
-                    <td><?php echo htmlspecialchars(substr($user['senha'], 0, 20)) . '...'; ?></td>
-                    <td><?php echo $user['status'] ? '1 (Ativo)' : '0 (Inativo)'; ?></td>
-                    <td>
-                        <?php if ($is_admin): ?>
-                            <a href="editar_usuario.php?id=<?php echo $user['id']; ?>" class="action-link">Editar</a> | 
-                            <a href="excluir_usuario.php?id=<?php echo $user['id']; ?>" class="action-link" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
-                        <?php else: ?>
-                            <span class="disabled-link">Editar</span> | 
-                            <span class="disabled-link">Excluir</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php else: ?>
-            <h2>Lista de Usuários</h2>
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Senha (hash)</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-                <?php foreach ($users as $user): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($user['nome']); ?></td>
-                    <td><?php echo htmlspecialchars($user['email']); ?></td>
-                    <td><?php echo htmlspecialchars(substr($user['senha'], 0, 20)) . '...'; ?></td>
-                    <td><?php echo $user['status'] ? '1 (Ativo)' : '0 (Inativo)'; ?></td>
-                    <td>
+        <h2>Lista de Usuários</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha (hash)</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+            <?php foreach ($users as $user): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($user['nome']); ?></td>
+                <td><?php echo htmlspecialchars($user['email']); ?></td>
+                <td><?php echo htmlspecialchars(substr($user['senha'], 0, 20)) . '...'; ?></td>
+                <td><?php echo $user['status'] ? '1 (Ativo)' : '0 (Inativo)'; ?></td>
+                <td>
+                    <?php if ($is_admin): ?>
+                        <a href="editar_usuario.php?id=<?php echo $user['id']; ?>" class="action-link">Editar</a> | 
+                        <a href="excluir_usuario.php?id=<?php echo $user['id']; ?>" class="action-link" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
+                    <?php else: ?>
                         <span class="disabled-link">Editar</span> | 
                         <span class="disabled-link">Excluir</span>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php endif; ?>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
         <p><a href="logout.php">Sair</a></p>
     </main>
 </body>

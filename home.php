@@ -56,7 +56,7 @@ rodar php:
 
 cmd do pc ->
 
-cd C:\Users\miria\OneDrive\Desktop\CODING\sistema login
+C:\Users\miria\OneDrive\Desktop\CODING\sistema login php\sistema-login-PHP
 
 php -S localhost:8000
 

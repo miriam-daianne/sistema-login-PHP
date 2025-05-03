@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <button type="submit" class="psswd-button">Cadastrar</button>
             </form>
-            <p><a href="login.php">Já tem conta? Faça login</a></p>
+            <p><a class='texto' href="login.php">Já tem conta? Faça login</a></p>
         </div>
     </div>
 </body>

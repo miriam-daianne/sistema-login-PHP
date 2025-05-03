@@ -1,3 +1,4 @@
+/* posicionando o quadro no meio da página  */
 .psswd-wrapper {
     display: flex;
     justify-content: center;
@@ -5,7 +6,8 @@
     min-height: calc(100vh - 60px);
     min-width: 150vh;
     padding: 20px;
-    margin:0 18% 0 18%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -76,6 +78,9 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .psswd-button:hover {
@@ -105,4 +110,18 @@
 
 .link-separator {
     color: #999;
+}
+
+.texto {
+        font-weight: 50;
+        text-align: center;
+        display: block;
+        margin: 20px auto 0 auto;
+}
+
+
+.sucesso .erro{
+    font-weight: 50;
+    color:#5864A6;
+    margin: 5%;
 }
