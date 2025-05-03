@@ -1,0 +1,18 @@
+
+/*Título da página*/
+h1{
+    font-family: "Boogaloo";
+    color:#5864A6;
+    font-size: 62px;
+}
+
+/* Centralizar conteúdo */
+section{
+    display: flex;
+    justify-content: center;
+    margin: 60px 80px 0px 30px;
+    align-items: center;
+
+}
+
+

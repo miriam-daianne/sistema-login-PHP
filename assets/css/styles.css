@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Boogaloo&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Boogaloo&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Boogaloo', 'Comfortaa';
+}
+
+body{
+    font-family: Comfortaa;
+    background-color: #EBE8F1;
+    display: flex;
+    font-size: 16px;
+}
+
+nav{
+    background-color: #5864A6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    height: 70px;
+    margin-bottom: 150px;
+    z-index: 1000;
+    padding-top: -60px;
+}
+
+nav div+div img{
+    margin: 20px 10px 10px 10px;
+}
+
+  /* Estilo do container do menu */
+  .menu-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0; 
+    margin: 0;
+}
+
+/* A imagem que servirá como botão do menu */
+.menu-button {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0; 
+    padding: 0; 
+}
+
+/* O menu dropdown que aparece ao clicar */
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: #5864A6;
+    min-width: 100px;
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0; 
+    padding-top: 0; 
+    border: none; 
+}
+
+/* Links dentro do dropdown */
+.menu-dropdown a {
+    color: #EBE8F1;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Efeito hover nos links */
+.menu-dropdown a:hover {
+    background-color: #50C2CC;
+}
+
+/* Mostra o dropdown quando o checkbox está marcado */
+#menu-toggle:checked ~ .menu-dropdown {
+    display: block;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}

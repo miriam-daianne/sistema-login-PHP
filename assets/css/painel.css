@@ -1,0 +1,116 @@
+body{
+    display: block;
+}
+
+main{
+    padding: 100px;
+}
+
+h1 {
+    color: #5864A6;
+    font-size: 62px;
+    font-weight: 500;
+    margin: 30px;
+    font-family: "Boogaloo";
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    background-color: none;
+    box-shadow: 0 2px 5px #0000001a;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: #3a7ac800;
+}
+
+th {
+    background-color: none;
+    font-weight: 500;
+    color: #5864A6;
+    border-bottom: 3px solid #5864A6;
+}
+
+td{
+    font-family: 'Comfortaa';
+    font-weight: 400;
+    text-align: left;
+    margin-left: 20px;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.status-cell {
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-option {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.alter {
+    color: #5864A6;
+    border: 1px solid #5864A6;
+    background-color: #3a7ac800;
+}
+
+.alter:hover{
+    background-color: #5864A6;
+    color:aliceblue;
+}
+
+.drop {
+    color: #F299B1;
+    border: 1px solid #F299B1;
+    background-color: #3a7ac800;
+}
+
+.drop:hover{
+    background-color: #F299B1;
+    color:aliceblue;
+}
+
+.save-btn {
+    background-color: #3a7ac800;
+    color: #5864A6;
+    border: none;
+    border-radius: 10px;
+    border: solid #5864A6;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-left: 90.5%;
+}
+
+.save-btn:hover {
+    background-color: #5864A6;
+    color:aliceblue;
+}
+
+
+.action-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+.disabled-link {
+    color: #aaa;
+    text-decoration: none;
+    cursor: not-allowed;
+}

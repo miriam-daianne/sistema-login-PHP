@@ -1,0 +1,108 @@
+.psswd-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    min-width: 150vh;
+    padding: 20px;
+    margin:0 18% 0 18%;
+}
+
+
+.psswd-container {
+    border: solid 5px;
+    border-radius: 30px;
+    border-color: #5864A6;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    margin: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.psswd-title {
+    color: #5864A6;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: "Boogaloo";
+}
+
+.psswd-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #555;
+    font-size: 14px;
+    font-weight: 1000;
+    font-family: 'Comfortaa';
+}
+
+.form-group input {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border: 3px solid #6BB9E8;
+    background-color: #EBE8F1;
+    border-radius: 10px;
+    font-size: 1,5rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.psswd-button {
+    background-color: #3a7ac800;
+    color: #5864A6;
+    border: none;
+    border-radius: 10px;
+    border: solid #5864A6;
+    padding: 12px;
+    font-size: 32px;
+    font-weight: 1500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.psswd-button:hover {
+    background-color: #5864A6;
+    color:aliceblue;
+}
+
+.psswd-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.psswd-link {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.psswd-link:hover {
+    color: #3a7bc8;
+    text-decoration: underline;
+}
+
+.link-separator {
+    color: #999;
+}
