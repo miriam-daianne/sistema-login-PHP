@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <a href="home.html">
+        <a href="home.php">
             <div class="logo">
                 <img src="assets/img/coelho icon.png" alt="imagem de um coelho fofo digitando" height="100px">
             </div>

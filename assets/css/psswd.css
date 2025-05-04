@@ -113,15 +113,15 @@
 }
 
 .texto {
-        font-weight: 50;
-        text-align: center;
-        display: block;
-        margin: 20px auto 0 auto;
+    font-weight: 100;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0 auto;
 }
 
 
-.sucesso .erro{
+.sucesso, .erro{
     font-weight: 50;
-    color:#5864A6;
+    color:#fb5a85;
     margin: 5%;
 }

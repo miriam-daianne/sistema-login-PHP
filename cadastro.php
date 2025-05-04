@@ -7,17 +7,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
+    // Definir administrador com base no email específico
     $admin_email = 'admin@admin.com';
     $is_admin = ($email === $admin_email) ? 1 : 0;
 
     $stmt = $conexao->prepare("INSERT INTO users (nome, email, senha, is_admin) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("sssi", $nome, $email, $senha, $is_admin);
 
-    if ($stmt->execute()) {
-        $_SESSION['mensagem'] = "Cadastro realizado com sucesso!";
-        header("Location: login.php");
-    } else {
-        $erro = "Erro: Email já cadastrado.";
+    try {
+        if ($stmt->execute()) {
+            $_SESSION['mensagem'] = "Cadastro realizado com sucesso!";
+            header("Location: login.php");
+            exit;
+        }
+    } catch (mysqli_sql_exception $e) {
+        if ($e->getCode() == 1062) { // Código de erro para entrada duplicada
+            $erro = "Erro: Email já cadastrado.";
+        } else {
+            $erro = "Erro ao realizar cadastro: " . $e->getMessage();
+        }
     }
     $stmt->close();
 }
@@ -77,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <button type="submit" class="psswd-button">Cadastrar</button>
             </form>
-            <p><a class='texto' href="login.php">Já tem conta? Faça login</a></p>
+            <p><a class="texto"  href="login.php">Já tem conta? Faça login</a></p>
         </div>
     </div>
 </body>

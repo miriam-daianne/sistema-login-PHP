@@ -43,7 +43,6 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
     <main>
         <h1>Dados</h1>
         <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</p>
-        <h2>Lista de Usuários</h2>
         <table>
             <tr>
                 <th>Nome</th>
@@ -60,8 +59,8 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
                 <td><?php echo $user['status'] ? '1 (Ativo)' : '0 (Inativo)'; ?></td>
                 <td>
                     <?php if ($is_admin): ?>
-                        <a href="editar_usuario.php?id=<?php echo $user['id']; ?>" class="action-link">Editar</a> | 
-                        <a href="excluir_usuario.php?id=<?php echo $user['id']; ?>" class="action-link" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
+                        <a href="editar_usuario.php?id=<?php echo $user['id']; ?>" class="action-link edit">Editar</a> | 
+                        <a href="excluir_usuario.php?id=<?php echo $user['id']; ?>" class="action-link drop" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
                     <?php else: ?>
                         <span class="disabled-link">Editar</span> | 
                         <span class="disabled-link">Excluir</span>
@@ -70,7 +69,7 @@ $users = $result->fetch_all(MYSQLI_ASSOC);
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="logout.php">Sair</a></p>
+        <p><a class="psswd-button" href="login.php">Sair</a></p>
     </main>
 </body>
 </html>
