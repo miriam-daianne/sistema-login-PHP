@@ -1,5 +1,5 @@
-<?php
-session_start();
+<?php 
+session_start(); 
 require_once 'config/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $result->fetch_assoc();
         if ($user['status'] == 0) {
             $erro = "Conta inativa. Contate o administrador.";
-        } elseif (password_verify($senha, $user['senha'])) {
+        } elseif (password_verify($senha, $user['senha'])) 
+        {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['nome'] = $user['nome'];
             $_SESSION['is_admin'] = $user['is_admin'];

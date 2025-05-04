@@ -24,7 +24,8 @@ if (file_exists($sql_file)) {
             }
         } while ($conexao->next_result());
     } else {
-        error_log("Erro ao executar o script SQL: " . $conexao->error . "\nSQL: " . $sql);
+        error_log("[SUCCESS] Login realizado por: " . $email . " - IP: " . $_SERVER['REMOTE_ADDR']);
+        error_log("[FAILED] Tentativa de login com: " . $email . " - IP: " . $_SERVER['REMOTE_ADDR']);
         die("Erro ao executar o script SQL: " . $conexao->error);
     }
 } else {

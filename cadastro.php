@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    // Definir administrador com base no email específico
     $admin_email = 'admin@admin.com';
     $is_admin = ($email === $admin_email) ? 1 : 0;
 
@@ -21,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
     } catch (mysqli_sql_exception $e) {
-        if ($e->getCode() == 1062) { // Código de erro para entrada duplicada
+        if ($e->getCode() == 1062) {
             $erro = "Erro: Email já cadastrado.";
         } else {
             $erro = "Erro ao realizar cadastro: " . $e->getMessage();

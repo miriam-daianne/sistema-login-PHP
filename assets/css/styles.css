@@ -33,8 +33,7 @@ nav div+div img{
     margin: 20px 10px 10px 10px;
 }
 
-  /* Estilo do container do menu */
-  .menu-container {
+.menu-container {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -42,16 +41,14 @@ nav div+div img{
     margin: 0;
 }
 
-/* A imagem que servirá como botão do menu */
 .menu-button {
     width: 120px;
     height: auto;
     display: block;
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
 }
 
-/* O menu dropdown que aparece ao clicar */
 .menu-dropdown {
     display: none;
     position: absolute;
@@ -67,7 +64,6 @@ nav div+div img{
     border: none; 
 }
 
-/* Links dentro do dropdown */
 .menu-dropdown a {
     color: #EBE8F1;
     padding: 12px 20px;
@@ -76,17 +72,14 @@ nav div+div img{
     text-align: left;
 }
 
-/* Efeito hover nos links */
 .menu-dropdown a:hover {
     background-color: #50C2CC;
 }
 
-/* Mostra o dropdown quando o checkbox está marcado */
 #menu-toggle:checked ~ .menu-dropdown {
     display: block;
 }
 
-/* Esconde o checkbox */
 #menu-toggle {
     display: none;
 }

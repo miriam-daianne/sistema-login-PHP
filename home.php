@@ -42,21 +42,14 @@
         
 
 
-    <!-- pra rodar essa bosta  -->
 
-    <!--
-
-    Email: admin@admin.com
-
-Senha: admin123
-
------------------------------------------------------
+<!--
 
 rodar php:
 
 cmd do pc ->
 
-C:\Users\miria\OneDrive\Desktop\CODING\sistema login php\sistema-login-PHP
+cd <caminho>
 
 php -S localhost:8000
 
@@ -64,14 +57,7 @@ no navegador ->
 
 http://localhost:8000/home.php
 
-ctrl + C -> para sair
-
-
-falta -> botão sair 
-
 -->
 
-<!-- fim  -->
-    
 </body>
 </html>
